@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교실 방탈출 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 클릭 가능한 오브젝트 -->
+        <div class="clickable" id="flag-obj" title="태극기"></div>
+        <div class="clickable" id="chalkboard-obj" title="칠판"></div>
+        <div class="clickable" id="tv-obj" title="TV"></div>
+        <div class="clickable" id="desk-obj" title="책상"></div>
+        <div class="clickable" id="door-obj" title="문"></div>
+
+        <!-- 힌트 표시 영역 -->
+        <div id="hint-display">
+            <h2>획득한 힌트</h2>
+            <p id="collected-hints">아직 힌트가 없습니다.</p>
+            <p class="small-text">* 힌트는 한국의 중요한 국경일과 관련이 있습니다.</p>
+        </div>
+    </div>
+
+    <!-- 모달 -->
+    <div id="modal-container" class="hidden">
+        <!-- 태극기 모달 -->
+        <div id="flag-modal" class="modal-content hidden">
+            <span class="close-btn">&times;</span>
+            <h2>태극기 퀴즈</h2>
+            <p>태극기 중앙에 있는 태극 문양의 원은<br>어떤 숫자와 닮았나요?</p>
+            <button class="hint-btn" data-hint="0">힌트 확인</button>
+        </div>
+
+        <!-- 칠판 모달 -->
+        <div id="chalkboard-modal" class="modal-content hidden">
+            <span class="close-btn">&times;</span>
+            <h2>칠판 문제</h2>
+            <p>칠판에 적힌 구구단을 풀어보세요.</p>
+            <p style="font-size: 2rem; margin: 10px 0;">4 x 2 = ?</p>
+            <button class="hint-btn" data-hint="8">정답 확인</button>
+        </div>
+
+        <!-- TV 모달 -->
+        <div id="tv-modal" class="modal-content hidden">
+            <span class="close-btn">&times;</span>
+            <h2>TV 퀴즈</h2>
+            <p>TV 화면은 '하나'의 색으로 가득 차 있습니다.<br>여기서 연상할 수 있는 숫자는 무엇일까요?</p>
+            <button class="hint-btn" data-hint="1">힌트 확인</button>
+        </div>
+
+        <!-- 책상 모달 -->
+        <div id="desk-modal" class="modal-content hidden">
+            <span class="close-btn">&times;</span>
+            <h2>책상 서랍</h2>
+            <p>선생님의 책상 서랍을 열어보니<br>오백원짜리 동전이 하나 나왔습니다.<br>이 동전에서 찾을 수 있는 가장 큰 숫자는 무엇일까요?</p>
+            <button class="hint-btn" data-hint="5">힌트 확인</button>
+        </div>
+
+        <!-- 문 모달 -->
+        <div id="door-modal" class="modal-content hidden">
+            <span class="close-btn">&times;</span>
+            <h2>탈출구</h2>
+            <p>4자리 비밀번호를 입력하세요.</p>
+            <input type="text" id="password-input" maxlength="4">
+            <button id="escape-btn">탈출</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
